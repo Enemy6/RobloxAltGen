@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<h1>Refresh for new accounts</h1>
+<h2>you will have to</h2>
+<h3>create these accounts yourself (probably)</h3>
+<html>
+  <head>
+    <title>Random User Credentials Generator</title>
+    <script>
+      function generateCredentials() {
+        var possibleUsername = "abcdefghijklmnopqrstuvwxyz0123456789";
+        var possiblePassword = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var username = "";
+        var password = "";
+        for (var i = 0; i < 10; i++) {
+          username += possibleUsername.charAt(Math.floor(Math.random() * possibleUsername.length));
+          password += possiblePassword.charAt(Math.floor(Math.random() * possiblePassword.length));
+        }
+        document.getElementById("username").innerHTML = username;
+        document.getElementById("password").innerHTML = password;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Random User Credentials</h1>
+    <p>Username: <span id="username"></span></p>
+    <p>Password: <span id="password"></span></p>
+    <button onclick="generateCredentials()">Generate</button>
+  </body>
+</html>
